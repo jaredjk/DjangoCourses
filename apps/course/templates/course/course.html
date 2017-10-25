@@ -1,0 +1,54 @@
+<!-- <html lang="en">
+    <head>
+        <title>Users</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <br>
+            <h1>Add a new course</h1>
+         
+            {% for message in messages %} 
+                <p>{{ message }}</p>
+               
+            {% endfor %}
+            <form action="/course/create" method="post">
+                {% csrf_token %}
+                <p>Name:</p>
+                <input type="text" name="inputed_name">
+                <p>Description:</p>
+                <input type="text" name="inputed_desc"><br><br>
+                <input type="submit" value="Add">
+            </form>
+            <br>
+        </div>
+        <div class="container">
+            <br>
+            <h1>Courses</h1>
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Description</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in all_course %}
+                        <tr>
+                            <td>{{course.name}}</td>
+                            <td>{{course.email}}</td>
+                            <td>{{course.created_at}}</td>
+                            <td>
+                                <a href="/users/delete{{course.id}}">remove</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html> -->
